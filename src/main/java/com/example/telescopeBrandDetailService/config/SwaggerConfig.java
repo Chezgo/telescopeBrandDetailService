@@ -16,14 +16,12 @@ public class SwaggerConfig {
 
     @Bean
     public OpenAPI telescopeBrandDetailOpenAPI() {
-        // Схема авторизации: Bearer JWT
         SecurityScheme securityScheme = new SecurityScheme()
                 .type(SecurityScheme.Type.HTTP)
                 .scheme("bearer")
                 .bearerFormat("JWT")
                 .description("Введите JWT-токен в формате: <code>Bearer eyJhbGciOi...</code>");
 
-        // Глобальное требование авторизации (можно отключить для открытых эндпоинтов)
         SecurityRequirement securityRequirement = new SecurityRequirement()
                 .addList("bearerAuth");
 
@@ -40,9 +38,6 @@ public class SwaggerConfig {
                         .contact(new Contact()
                                 .name("Dmitriy")
                                 .email("dima.chezganov@mail.ru"))
-                        .license(new License()
-                                .name("MIT")
-                                .url("https://opensource.org/licenses/MIT"))
                 )
                 .addServersItem(new Server()
                         .url("https://api.our-galaxy.space/telescope-brand-detail")
@@ -51,6 +46,6 @@ public class SwaggerConfig {
                 .components(new Components()
                         .addSecuritySchemes("bearerAuth", securityScheme)
                 )
-                .addSecurityItem(securityRequirement); // применить ко всему API
+                .addSecurityItem(securityRequirement);
     }
 }
