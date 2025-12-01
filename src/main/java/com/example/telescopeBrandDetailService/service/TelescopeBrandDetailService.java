@@ -21,7 +21,7 @@ public class TelescopeBrandDetailService {
 
     /**
      * Поиск всех наименований брендов деталей телескопа.
-     * (@return) найденный массив сущностей
+     * (@return) Найденный массив сущностей
      */
     public List<TelescopeBrandDetail> findAllTelescopeBrandDetail(){
         return telescopeBrandDetailRepository.findAll();
