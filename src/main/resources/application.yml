@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    try-it-out-enabled: true
+  info:
+    title: Telescope Brand Detail Service API
+    description: Управление брендами деталей телескопов
+    version: 1.0.0
+    contact:
+      name: dmitriy
+      email: dima.chezganov@mail.ru

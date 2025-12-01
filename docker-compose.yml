@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    container_name: telescope_brand_detail_service
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "9008:9008"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      - SPRING_JPA_SHOW_SQL=${SPRING_JPA_SHOW_SQL}
+      - SERVER_PORT=${SERVER_PORT}
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    external: true

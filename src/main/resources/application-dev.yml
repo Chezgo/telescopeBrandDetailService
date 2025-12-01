@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://100.75.9.97:5432/db_star
+    username: admin_chezgo_god_dev
+    password: 93569356EranTAnauL!
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+server:
+  port: 9008
